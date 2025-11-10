@@ -8,6 +8,33 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <h1>laravel_model_controller</h1>
+    <div class="container">
+        <div class="row">
+            @foreach ($movies as $movie)
+            <div class="col-12">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                      FILM {{$movie["id"]}}
+                    </div>
+                    <ul class="list-group list-group-flush">
+                         <li class="list-group-item">{{$movie["title"]}}</li>
+                                        <li class="list-group-item">
+                                            {{$movie["original_title"]}}
+                                        </li>
+                                        <li class="list-group-item">
+                                            {{$movie["nationality"]}}
+                                        </li>
+                                        <li class="list-group-item">
+                                            {{$movie["date"]}}
+                                        </li>
+                                        <li class="list-group-item">
+                                            {{$movie["vote"]}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                @endforeach
+            </div>
+        </div>
+    </div>
 </body>
 </html>
